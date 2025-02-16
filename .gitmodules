@@ -1,0 +1,3 @@
+[submodule "FtRandoLib"]
+	path = FtRandoLib
+	url = https://github.com/TheRealQuantam/FtRandoLib.git

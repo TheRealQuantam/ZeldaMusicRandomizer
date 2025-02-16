@@ -1,0 +1,39 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35707.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZeldaMusicRandomizer", "ZeldaMusicRandomizer\ZeldaMusicRandomizer.csproj", "{9A1F95EC-88A4-4B73-A0F8-24E76BCB3C97}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZeldaMusicRandomizer.Browser", "ZeldaMusicRandomizer.Browser\ZeldaMusicRandomizer.Browser.csproj", "{9EFE046F-3AAB-4BE2-B637-41CECDBAE4A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZeldaMusicRandomizer.Desktop", "ZeldaMusicRandomizer.Desktop\ZeldaMusicRandomizer.Desktop.csproj", "{E3DF1B33-E4F9-4086-ABFA-1C8CD98BC366}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FtRandoLib", "FtRandoLib\FtRandoLib.csproj", "{D515F276-5BC3-4606-B752-2657AA59C9D5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9A1F95EC-88A4-4B73-A0F8-24E76BCB3C97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A1F95EC-88A4-4B73-A0F8-24E76BCB3C97}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A1F95EC-88A4-4B73-A0F8-24E76BCB3C97}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A1F95EC-88A4-4B73-A0F8-24E76BCB3C97}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EFE046F-3AAB-4BE2-B637-41CECDBAE4A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EFE046F-3AAB-4BE2-B637-41CECDBAE4A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EFE046F-3AAB-4BE2-B637-41CECDBAE4A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EFE046F-3AAB-4BE2-B637-41CECDBAE4A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3DF1B33-E4F9-4086-ABFA-1C8CD98BC366}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3DF1B33-E4F9-4086-ABFA-1C8CD98BC366}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3DF1B33-E4F9-4086-ABFA-1C8CD98BC366}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3DF1B33-E4F9-4086-ABFA-1C8CD98BC366}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D515F276-5BC3-4606-B752-2657AA59C9D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D515F276-5BC3-4606-B752-2657AA59C9D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D515F276-5BC3-4606-B752-2657AA59C9D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D515F276-5BC3-4606-B752-2657AA59C9D5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

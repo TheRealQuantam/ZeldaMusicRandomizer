@@ -1,0 +1,160 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:ZeldaMusicRandomizer.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="450"
+             x:Class="ZeldaMusicRandomizer.Views.MainView"
+             x:DataType="vm:MainViewModel">
+  <Design.DataContext>
+    <!-- This only sets the DataContext for the previewer in an IDE,
+         to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+    <vm:MainViewModel />
+  </Design.DataContext>
+
+  <StackPanel 
+    Orientation="Vertical"
+    Margin="16"
+  >
+    <!-- Header -->
+    <TextBlock
+      Text="Legend of Zelda"
+      FontSize="48"
+      HorizontalAlignment="Center"
+    />
+    
+    <TextBlock
+      Text="Music Randomizer"
+      FontSize="28"
+      HorizontalAlignment="Center"
+    />
+    
+    <TextBlock
+      Text="By Justin Olbrantz (Quantam)"
+      HorizontalAlignment="Center"
+    />
+    
+    <TextBlock/>
+    
+    <TextBlock
+      Text="{Binding StatusString}" 
+      HorizontalAlignment="Center"
+    />
+
+    <TextBlock/>
+
+    <!-- Paths -->
+    <Grid
+      ColumnDefinitions="Auto, 6, *, 6, Auto"
+      RowDefinitions="Auto, 6, Auto, 6, Auto"
+    >
+      <TextBlock 
+        Text="ROM Path:"
+        Grid.Row="0"
+        Grid.Column="0"
+        VerticalAlignment="Center"
+      />
+      <TextBox
+        IsReadOnly="{Binding CannotUsePaths}"
+        Text="{Binding RomPath}"
+        Grid.Row="0"
+        Grid.Column="2"
+        VerticalAlignment="Center"
+        HorizontalAlignment="Stretch"
+      />
+      <Button
+        Content="Browse..."
+        Grid.Row="0"
+        Grid.Column="4"
+        VerticalAlignment="Center"
+        Command="{Binding SelectRomPath_Clicked}"
+      />
+
+      <TextBlock
+        Text="Music Path:"
+        Grid.Row="2"
+        Grid.Column="0"
+        VerticalAlignment="Center"
+      />
+      <TextBox
+        IsReadOnly="{Binding CannotUsePaths}"
+        Text="{Binding MusicDirPath}"
+        Grid.Row="2"
+        Grid.Column="2"
+        VerticalAlignment="Center"
+        HorizontalAlignment="Stretch"
+      />
+      <Button
+        Content="Browse..."
+        Grid.Row="2"
+        Grid.Column="4"
+        VerticalAlignment="Center"
+        Command="{Binding SelectMusicDirPath_Clicked}"
+      />
+
+      <TextBlock
+        Text="Music Seed:"
+        Grid.Row="4"
+        Grid.Column="0"
+        VerticalAlignment="Center"
+      />
+      <TextBox
+        Text="{Binding SeedString}"
+        Grid.Row="4"
+        Grid.Column="2"
+        VerticalAlignment="Center"
+        HorizontalAlignment="Right"
+      />
+      <Button
+        Content="Random"
+        Grid.Row="4"
+        Grid.Column="4"
+        VerticalAlignment="Center"
+        HorizontalAlignment="Center"
+        Command="{Binding RandomSeed_Clicked}"
+      />
+    </Grid>
+
+    <TextBlock/>
+
+    <!-- Options -->
+    <StackPanel
+      HorizontalAlignment="Center"
+    >
+      <CheckBox
+        IsChecked="{Binding IsRandomizerRom}"
+        Content="Randomizer ROM"
+      />
+      <CheckBox
+        IsChecked="{Binding IncludeOriginalTracks}"
+        Content="Include Original Tracks"
+      />
+      <CheckBox
+        IsChecked="{Binding IncludeStandardLibraryTracks}"
+        Content="Include Standard Library Tracks"
+      />
+      <CheckBox
+        IsChecked="{Binding ExcludeUnsafeTracks}"
+        Content="Exclude Streaming Unsafe Tracks"
+      />
+    </StackPanel>
+    
+    <TextBlock />
+    
+    <TextBox
+      Text="{Binding Log}"
+      HorizontalAlignment="Stretch"
+      Height="150"
+      IsReadOnly="True"
+    />
+
+    <TextBlock />
+    
+    <Button 
+      IsEnabled="{Binding IsRomSelected}"
+      Content="Randomize"
+      HorizontalAlignment="Center"
+      Command="{Binding Randomize_Clicked}"
+    />
+  </StackPanel>
+</UserControl>
