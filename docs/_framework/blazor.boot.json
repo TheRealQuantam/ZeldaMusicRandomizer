@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "ZeldaMusicRandomizer.Browser",
   "resources": {
-    "hash": "sha256-eBe6pKHzzLw4LITVi8LphSkDVRBslQq8azsJZpyND6Y=",
+    "hash": "sha256-Sow15yGp6RyFi0YXX6MgaqUHSEtU/rbcP0TR1VzzBQg=",
     "jsModuleNative": {
       "dotnet.native.js": "sha256-8INQ3vA7XkNopQzHp8Y6gpEjrvIZ93T53DUJFn0x+mw="
     },
@@ -31,7 +31,7 @@
       "Avalonia.Skia.wasm": "sha256-Fvx2ogFM30B7rZJBXwbGcitJTyLhHqi9otEEXfkRutE=",
       "Avalonia.Themes.Fluent.wasm": "sha256-WEFCVWICfIu2xvyIU+jc/kdHSK7PEEjey7paBciouEE=",
       "Avalonia.Vulkan.wasm": "sha256-e5ldoQTRDzgjMR9SnfHh4jk8V+fMI8mW2SCAgdHXBZk=",
-      "FtRandoLib.wasm": "sha256-OrtbaPoyxLUTTLc3iOhqFbDctNj5CWGp0khfYBt+i+k=",
+      "FtRandoLib.wasm": "sha256-V918qp8AdUpybecMfCVdFJ8yEiqwU5SIw2jXZVahidk=",
       "HarfBuzzSharp.wasm": "sha256-/yoK56sMN0ZyUnfF3SkQm5CtqgiuOGVb72XXjCRZUNw=",
       "Microsoft.CSharp.wasm": "sha256-7GVXmYK43BnOdaFtbXE7TEhIEqxLnkIztT8kaM8K69g=",
       "Newtonsoft.Json.wasm": "sha256-zunzdlCck/dPnh7OeqwtgWfZIFxwQUVypv5B/k24Mg0=",
@@ -70,8 +70,8 @@
       "System.Text.RegularExpressions.wasm": "sha256-LOyk1VhyI293NQijt5Rz5ugKkLHlQEX8RI3q1BXps/A=",
       "System.wasm": "sha256-Imc3VKweWiVSTfISxn8qRdbj1a3TmdIPoZ2BQ8U+dV8=",
       "System.Xml.Linq.wasm": "sha256-Pluwz37ouIbh57inrBPeiJDw1cPFifXCzhbvWNhqyTk=",
-      "ZeldaMusicRandomizer.Browser.wasm": "sha256-/D4mXHxn/FXlEBEonVqWHAxq15K841/8vPm/T1qT6Gc=",
-      "ZeldaMusicRandomizer.wasm": "sha256-8s+hQlmtQDXZbM9WRlCZeALFsqJtahmG8OxWYOCkk2U="
+      "ZeldaMusicRandomizer.Browser.wasm": "sha256-eL16JbweXOI5p9pA3M8r3RwviXnwP9WQRglwU5AkLSs=",
+      "ZeldaMusicRandomizer.wasm": "sha256-UdH19oSHLtV5DUCkJdCTpbdY7pphQffp6B4T9GAiOYQ="
     }
   },
   "cacheBootResources": true,
