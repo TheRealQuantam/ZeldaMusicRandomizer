@@ -143,6 +143,7 @@
     
     <TextBox
       Text="{Binding Log}"
+      CaretIndex="{Binding LogCaretIndex}"
       HorizontalAlignment="Stretch"
       Height="150"
       IsReadOnly="True"

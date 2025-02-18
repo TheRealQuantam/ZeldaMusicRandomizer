@@ -87,6 +87,13 @@ public class MainViewModel : ViewModelBase
         set => this.RaiseAndSetIfChanged(ref _log, value);
     }
 
+    // Used to scroll to the bottom automatically
+    public int LogCaretIndex
+    {
+        get => _logCaretIdx;
+        set => this.RaiseAndSetIfChanged(ref _logCaretIdx, value);
+    }
+
     const int VanillaRomSize = 0x20010;
     static string[] VanillaSha256s = 
     [
@@ -97,7 +104,7 @@ public class MainViewModel : ViewModelBase
     readonly TopLevel _topLevel;
     readonly bool _isBrowser;
 
-    string _statusStr = "Select path to ROM and music files to get started";
+    string _statusStr = "Select path to ROM to get started";
     bool _isRomSel = false;
     string _romPath = "";
     string _musicDirPath = "";
@@ -110,6 +117,7 @@ public class MainViewModel : ViewModelBase
     bool _includeStdLibTracks = true;
     bool _excludeUnsafeTracks = true;
     string _log = "";
+    int _logCaretIdx = 0;
 
     static byte[] ParseHexString(string str)
     {
@@ -155,7 +163,7 @@ public class MainViewModel : ViewModelBase
         }
         catch (Exception e)
         {
-            StatusString = $"ERROR: {e.Message}";
+            Log = $"ERROR: {e.Message}";
 
             return;
         }
@@ -163,10 +171,10 @@ public class MainViewModel : ViewModelBase
         if (isVanilla)
         {
             IsRandomizerRom = false;
-            StatusString = "Vanilla ROM selected";
+            Log = "Vanilla ROM selected";
         }
         else
-            StatusString = "Non-vanilla ROM selected";
+            Log = "Non-vanilla ROM selected";
 
         RomPath = file.TryGetLocalPath() ?? file.Name;
         _romFile = file;
@@ -196,6 +204,7 @@ public class MainViewModel : ViewModelBase
     {
         try
         {
+            LogCaretIndex = 0;
             Log = "";
 
             int seed;
@@ -254,7 +263,7 @@ public class MainViewModel : ViewModelBase
 
             if (songs.Count == 0)
             {
-                StatusString = "No songs were selected and no ROM was generated";
+                Log = "No songs were selected and no ROM was generated";
                 return;
             }
 
@@ -299,11 +308,18 @@ public class MainViewModel : ViewModelBase
             using (var stream = await tgtFile.OpenWriteAsync())
                 await stream.WriteAsync(tgtRom, 0, tgtRom.Length);
 
-            StatusString = $"✔️ Successfully wrote {tgtFile.Name}";
+            Log += $"\r\n✔️ Successfully wrote {tgtFile.Name}\r\n";
         }
         catch (Exception e)
         {
-            StatusString = $"❌ ERROR: {e.Message}";
+            if (Log.Length != 0)
+                Log += "\r\n";
+
+            Log += $"❌ ERROR: {e.Message}";
+        }
+        finally
+        {
+            LogCaretIndex = Log.Length;
         }
     }
 
