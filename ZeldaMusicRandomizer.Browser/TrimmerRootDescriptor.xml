@@ -1,0 +1,4 @@
+<linker>
+  <assembly fullname="Newtonsoft.Json" />
+  <assembly fullname="FtRandoLib" />
+</linker>

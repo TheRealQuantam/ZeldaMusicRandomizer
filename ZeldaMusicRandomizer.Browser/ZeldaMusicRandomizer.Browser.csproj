@@ -12,4 +12,8 @@
   <ItemGroup>
     <ProjectReference Include="..\ZeldaMusicRandomizer\ZeldaMusicRandomizer.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <TrimmerRootDescriptor Include="TrimmerRootDescriptor.xml" />
+  </ItemGroup>
 </Project>
