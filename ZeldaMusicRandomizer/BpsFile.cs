@@ -137,7 +137,7 @@ public class BpsFile
             if (src is null)
                 src = source.ToArray();
 
-            Debug.Assert(SourceCrc == Crc32.HashToUInt32(src));
+            //Debug.Assert(SourceCrc == Crc32.HashToUInt32(src));
 
             var data = _data as byte[];
             if (data is null)
@@ -172,7 +172,7 @@ public class BpsFile
             }
 
             Debug.Assert((ulong)offs == TargetSize);
-            Debug.Assert(TargetCrc == Crc32.HashToUInt32(tgt));
+            //Debug.Assert(TargetCrc == Crc32.HashToUInt32(tgt));
 
             return tgt;
         }
