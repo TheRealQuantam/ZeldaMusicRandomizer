@@ -37,6 +37,7 @@
     <TextBlock/>
     
     <TextBlock
+      Name="StatusText"
       Text="{Binding StatusString}" 
       HorizontalAlignment="Center"
     />
@@ -178,13 +179,13 @@
         <TextBlock 
           Text="{Binding VersionLine}"
         />
-        <!--
         <HyperlinkButton
+          Name="RepositoryUrlButton"
           Content="GitHub Page"
+          Tag="{Binding RepositoryUrl}"
           ToolTip.Tip="{Binding RepositoryUrl}"
           Padding="0"
-          Command="{Binding RepositoryUrl_Clicked}"
-        />-->
+        />
       </StackPanel>
     </Grid>
   </StackPanel>
