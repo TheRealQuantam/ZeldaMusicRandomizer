@@ -1,6 +1,7 @@
 ﻿using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
+using Avalonia.Platform;
 using Avalonia.Platform.Storage;
 using BpsFormat;
 using FtRandoLib.Importer;
@@ -25,6 +26,14 @@ namespace ZeldaMusicRandomizer.ViewModels;
 
 public class MainViewModel : ViewModelBase
 {
+    public string VersionLine => $"v{Assembly.GetExecutingAssembly().GetName().Version}";
+    public string AuthorLine => $"By {Assembly.GetExecutingAssembly().GetCustomAttribute<AssemblyCompanyAttribute>()!.Company}";
+    public string RepositoryUrl => Assembly
+        .GetExecutingAssembly()
+        .GetCustomAttributes<AssemblyMetadataAttribute>()
+        .Where(a => a.Key == "RepositoryUrl").First()
+        .Value!;
+
     public bool CannotUsePaths => _isBrowser;
 
     public bool IsRomSelected => _isRomSel;
@@ -138,6 +147,23 @@ public class MainViewModel : ViewModelBase
 
         GenerateSeed();
     }
+
+    /*public async void RepositoryUrl_Clicked()
+    {
+        if (OperatingSystem.IsBrowser())
+        {
+            var jsRuntime = AvaloniaLocator.Current.GetService<IJSRuntime>();
+            jsRuntime.InvokeVoidAsync("open", RepositoryUrl, "_blank");
+        }
+        else
+        {
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = RepositoryUrl,
+                UseShellExecute = true,
+            });
+        }
+    }*/
 
     public async void SelectRomPath_Clicked()
     {

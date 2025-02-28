@@ -4,6 +4,21 @@
     <Nullable>enable</Nullable>
     <LangVersion>latest</LangVersion>
     <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+    <Title>Zelda Music Randomizer</Title>
+    <VersionPrefix>0.1.0</VersionPrefix>
+    <AssemblyVersion>$(VersionPrefix).*</AssemblyVersion>
+    <FileVersion>$(VersionPrefix)</FileVersion>
+    <Authors>Justin Olbrantz (Quantam)</Authors>
+    <Product>$(Title)</Product>
+    <RepositoryUrl>https://github.com/TheRealQuantam/ZeldaMusicRandomizer</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageProjectUrl>https://therealquantam.github.io/ZeldaMusicRandomizer/</PackageProjectUrl>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <Deterministic>False</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <Deterministic>False</Deterministic>
   </PropertyGroup>
 
   <ItemGroup>

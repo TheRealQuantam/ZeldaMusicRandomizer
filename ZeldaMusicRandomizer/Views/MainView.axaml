@@ -30,7 +30,7 @@
     />
     
     <TextBlock
-      Text="By Justin Olbrantz (Quantam)"
+      Text="{Binding AuthorLine}"
       HorizontalAlignment="Center"
     />
     
@@ -57,6 +57,7 @@
       <TextBox
         IsReadOnly="{Binding CannotUsePaths}"
         Text="{Binding RomPath}"
+        ToolTip.Tip="The base ROM to add music to. This will either be the original Legend of Zelda ROM or a ROM produced by the Legend of Zelda Randomizer."
         Grid.Row="0"
         Grid.Column="2"
         VerticalAlignment="Center"
@@ -79,6 +80,7 @@
       <TextBox
         IsReadOnly="{Binding CannotUsePaths}"
         Text="{Binding MusicDirPath}"
+        ToolTip.Tip="The directory containing the JSON5 library files containing any custom music. This can be left empty if only the standard library is desired."
         Grid.Row="2"
         Grid.Column="2"
         VerticalAlignment="Center"
@@ -100,6 +102,7 @@
       />
       <TextBox
         Text="{Binding SeedString}"
+        ToolTip.Tip="A number which determines which music tracks will be chosen. In most cases this can be left unchanged (random), but it can be specified manually to allow the same set of tracks to be used on multiple source ROMs. This is entirely unrelated to the seed used in the Legend of Zelda Randomizer if used."
         Grid.Row="4"
         Grid.Column="2"
         VerticalAlignment="Center"
@@ -150,12 +153,39 @@
     />
 
     <TextBlock />
-    
-    <Button 
-      IsEnabled="{Binding IsRomSelected}"
-      Content="Randomize"
-      HorizontalAlignment="Center"
-      Command="{Binding Randomize_Clicked}"
-    />
+
+    <Grid
+      ColumnDefinitions="*, *, *"
+      RowDefinitions="*"
+    >
+      <Button
+        Grid.Column="1"
+        IsEnabled="{Binding IsRomSelected}"
+        Content="Randomize"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Center"
+        Command="{Binding Randomize_Clicked}"
+      />
+
+      <!--Bottom right info box-->
+      <StackPanel
+        Grid.Column="2"
+        Orientation="Vertical"
+        HorizontalAlignment="Right"
+        VerticalAlignment="Center"
+        Margin="0"
+      >
+        <TextBlock 
+          Text="{Binding VersionLine}"
+        />
+        <!--
+        <HyperlinkButton
+          Content="GitHub Page"
+          ToolTip.Tip="{Binding RepositoryUrl}"
+          Padding="0"
+          Command="{Binding RepositoryUrl_Clicked}"
+        />-->
+      </StackPanel>
+    </Grid>
   </StackPanel>
 </UserControl>
