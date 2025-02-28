@@ -17,7 +17,7 @@ jobs:
           dotnet-version: '8.0.x'
   
       - name: Install WebAssembly tools
-        run: dotnet workload install wasm-tools-net8
+        run: dotnet workload install wasm-tools
   
       - name: Build the project
         run: dotnet publish ZeldaMusicRandomizer.Browser -c Release -o build
