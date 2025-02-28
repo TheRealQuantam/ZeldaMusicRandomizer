@@ -36,14 +36,6 @@
     
     <TextBlock/>
     
-    <TextBlock
-      Name="StatusText"
-      Text="{Binding StatusString}" 
-      HorizontalAlignment="Center"
-    />
-
-    <TextBlock/>
-
     <!-- Paths -->
     <Grid
       ColumnDefinitions="Auto, 6, *, 6, Auto"
